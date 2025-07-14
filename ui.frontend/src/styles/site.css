@@ -1,0 +1,77 @@
+/* =============================
+   RESET MINIMAL — mantemos o da Adobe
+   ============================= */
+
+/*
+   Tudo a seguir entra depois da folha global do archetype,
+   então sobrescreve por cascata (ou com !important onde preciso).
+   ------------------------------------------------------------- */
+
+/* Paleta do projeto */
+:root {
+  --cafe-escuro: #2c1b18;   /* espresso */
+  --cafe-medio : #4b2e2a;   /* torra média (footer) */
+  --crema      : #f8f5f2;   /* fundo bege claro */
+}
+
+/* ----- corpo geral ----- */
+body {
+  background-color: var(--crema) !important;
+  color: var(--cafe-escuro) !important;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  line-height: 1.55;
+}
+
+/* Remove largura fixa e padding do componente Core Page */
+.page {
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ----- títulos ----- */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap");
+
+h1, h2, h3, h4, h5 {
+  color: var(--cafe-escuro) !important;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: 2.25rem; }   /* ajuste fino opcional */
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.4rem;  }
+
+/* ----- parágrafos e listas ----- */
+p, li {
+  font-size: 1rem;
+  margin: 0 0 1rem;
+}
+
+/* ----- links ----- */
+a {
+  color: var(--cafe-medio);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+a:hover,
+a:focus {
+  color: var(--cafe-escuro);
+  text-decoration: underline;
+}
+
+.nav-container,
+.rw-box {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  color: var(--cafe-escuro) !important;
+}
+
+/* (exemplo) botão genérico se usar Core Button sem customização */
+.cmp-button {
+  background: var(--cafe-medio);
+  color: var(--crema);
+  padding: .6rem 1.2rem;
+  border-radius: 4px;
+}
+.cmp-button:hover {
+  background: var(--cafe-escuro);
+}

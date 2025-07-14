@@ -1,0 +1,51 @@
+/* Estilo do container principal */
+.coffee-list-root {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Container do AEM e Grid */
+.coffee-list-root .container.responsivegrid,
+.coffee-list-root .cmp-container {
+  width: 100% !important;
+}
+
+/* Grid principal que contém os cards */
+.coffee-list-root .aem-Grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 50px !important;
+  justify-content: center !important;
+}
+
+/* Colunas do grid que contêm os cards */
+.coffee-list-root .aem-GridColumn.aem-GridColumn--default--12 {
+  width: auto !important;
+  float: none !important;
+  flex: 1 !important;
+  max-width: 300px !important;
+  margin: 0 !important;
+}
+
+/* Ajustes nos containers internos */
+.coffee-list-root .aem-GridColumn > div {
+  margin: 0 !important;
+  padding: 0px 20px !important;
+}
+
+/* Remover espaços vazios */
+.coffee-list-root .aem-GridColumn > div:empty {
+  display: none !important;
+}
+
+/* Garantir que o card ocupe todo o espaço disponível */
+.coffee-list-root .coffee-card {
+  height: 100%;
+  margin: 0 !important;
+}
+
+.cmp-title{
+    padding-left: 10%;
+    padding-top: 50px;
+
+}

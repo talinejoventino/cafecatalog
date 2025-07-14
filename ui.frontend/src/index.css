@@ -41,3 +41,30 @@ p,
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   color: #000000;
 }
+
+
+.coffee-list-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;             
+}
+
+
+.coffee-list-grid > * {
+  flex: 1 1 calc(33.333% - 32px);   
+  max-width: 350px;                 
+}
+
+/* tablet – 2 colunas */
+@media (max-width: 960px) {
+  .coffee-list-grid > * {
+    flex: 1 1 calc(50% - 32px);
+  }
+}
+
+/* mobile – 1 coluna */
+@media (max-width: 640px) {
+  .coffee-list-grid > * {
+    flex: 1 1 100%;
+  }
+}

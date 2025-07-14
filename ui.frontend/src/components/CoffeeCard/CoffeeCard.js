@@ -1,50 +1,78 @@
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- ~ Copyright 2020 Adobe Systems Incorporated
- ~
- ~ Licensed under the Apache License, Version 2.0 (the "License");
- ~ you may not use this file except in compliance with the License.
- ~ You may obtain a copy of the License at
- ~
- ~     http://www.apache.org/licenses/LICENSE-2.0
- ~
- ~ Unless required by applicable law or agreed to in writing, software
- ~ distributed under the License is distributed on an "AS IS" BASIS,
- ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- ~ See the License for the specific language governing permissions and
- ~ limitations under the License.
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+import React from "react";
+import { MapTo } from "@adobe/aem-react-editable-components";
+import "./CoffeeCard.css";
+import { Link, useLocation } from "react-router-dom";
 
-import sanitizeHtml from 'sanitize-html';
-import sanitizeWhiteList from '../sanitize-html.whitelist';
+const TARGET_URL = "/content/cafecatalog/us/en/home/detalhes.html";
 
-import React, { Component } from 'react';
-import extractModelId from '../../utils/extract-model-id';
+const CoffeeCard = (props) => {
+  const {
+    country,
+    refCode,
+    lotNumber,
+    title,
+    process,
+    varietal,
+    score,
+    units,
+    notes,
+  } = props;
+  const { pathname } = useLocation();
 
-require('./Text.css');
+  const missingMainField = !title || title.trim().length === 0;
 
-/**
- * Text React component
- */
-class CoffeeCard extends Component {
-  get richTextContent() {
+    const goToDetails = () => {
+    sessionStorage.setItem("coffeeDetail", JSON.stringify(props));
+    window.location.href = TARGET_URL;
+  };
+
+  if (missingMainField) {
     return (
-      <div
-        id={extractModelId(this.props.cqPath)}
-        data-rte-editelement
-        dangerouslySetInnerHTML={{
-          __html: sanitizeHtml(this.props.text, sanitizeWhiteList)
-        }}
-      />
+      <article className="coffee-card coffee-card-placeholder">
+        <p>⚠ Preencha o card para exibir conteúdo.</p>
+      </article>
     );
   }
 
-  get textContent() {
-    return <div>{this.props.text}</div>;
-  }
+  return (
+    <article className="coffee-card">
+      <header className="meta">
+        <span className="country">{country}</span>
+        <span className="ref">{refCode}</span>
+      </header>
 
-  render() {
-    return this.props.richText ? this.richTextContent : this.textContent;
-  }
-}
+      <div className="lot-wrapper">
+        <span className="lot">{lotNumber}</span>
+        <h3 className="title">{title}</h3>
+      </div>
 
-export default CoffeeCard;
+      <dl className="facts">
+        <div>
+          <dt>PROCESS</dt>
+          <dd>{process}</dd>
+        </div>
+        <div>
+          <dt>VARIETAL</dt>
+          <dd>{varietal}</dd>
+        </div>
+        <div>
+          <dt>CUPPING SCORE</dt>
+          <dd>{score}</dd>
+        </div>
+        <div>
+          <dt>UNITS&nbsp;AVAILABLE</dt>
+          <dd>{units}</dd>
+        </div>
+      </dl>
+
+      <div className="notes-block">
+        <dt>CUPPING NOTES</dt>
+        <dd>{notes}</dd>
+      </div>
+
+       <button className="details" onClick={goToDetails}>DETAILS</button>
+    </article>
+  );
+};
+
+export default MapTo("cafecatalog/components/coffeecard")(CoffeeCard);

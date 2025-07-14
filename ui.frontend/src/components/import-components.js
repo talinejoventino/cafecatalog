@@ -18,8 +18,14 @@ import withAsyncImport from "../utils/withAsyncImport";
 import './Page/Page';
 import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
+import './CoffeeList/CoffeeList';
+import './Footer/Footer';
+import './Header/Header';
+import './Navigation/Navigation';
+import "./Hero/Hero";
+import './CoffeeDetails/CoffeeDetails';
 
-import {MapTo} from '@adobe/aem-react-editable-components';
+import {MapTo, withAuthoringCapabilities} from '@adobe/aem-react-editable-components';
 
 import {
     CarouselV1IsEmptyFn
@@ -67,7 +73,7 @@ MapTo('cafecatalog/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
 
 
 MapTo('cafecatalog/components/breadcrumb')(BreadCrumbV2, {isEmpty: BreadCrumbV2IsEmptyFn});
-MapTo('cafecatalog/components/navigation')(NavigationV1);
+// MapTo('cafecatalog/components/navigation')(NavigationV1);
 MapTo('cafecatalog/components/languagenavigation')(LanguageNavigationV1);
 
 
@@ -75,7 +81,7 @@ MapTo('cafecatalog/components/tabs')(TabsV1, {isEmpty: TabsV1IsEmptyFn});
 MapTo('cafecatalog/components/accordion')(AccordionV1, {isEmpty: AccordionV1IsEmptyFn});
 MapTo('cafecatalog/components/carousel')(CarouselV1, {isEmpty: CarouselV1IsEmptyFn});
 MapTo('cafecatalog/components/container')(ContainerV1, {isEmpty: ContainerV1IsEmptyFn});
-
+MapTo('cafecatalog/components/coffeelist')(ContainerV1, {isEmpty: ContainerV1IsEmptyFn});
 
 //lazy load of internal component (hello world)
 
@@ -94,4 +100,4 @@ const TextEditConfig = {
 
 MapTo('cafecatalog/components/text')(LazyTextComponent, TextEditConfig);
 
-MapTo('cafecatalog/components/coffeecard')(CoffeeCard, TextEditConfig);
+MapTo('cafecatalog/components/coffeecard')(CoffeeCard);

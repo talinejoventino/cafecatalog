@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    jcr:title="Coffee Card">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <!-- ============= 1. ABA “CARD” ============= -->
+                    <card
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Card"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Nome do Café"
+                                name="./title"/>
+
+                            <country
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="País"
+                                name="./country"/>
+
+                            <refCode
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Código de Referência"
+                                name="./refCode"/>
+
+                            <lotNumber
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Lote / Nº"
+                                name="./lotNumber"/>
+
+                            <process
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Processo"
+                                name="./process"/>
+
+                            <varietal
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Varietal"
+                                name="./varietal"/>
+
+                            <score
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Cupping Score"
+                                name="./score"/>
+
+                            <units
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                fieldLabel="Unidades Disponíveis"
+                                name="./units"/>
+
+                            <notes
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Cupping Notes"
+                                name="./notes"
+                                rows="3"/>
+                        </items>
+                    </card>
+
+                    <!-- ============= 2. ABA “DETALHES” ============= -->
+                    <details
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Detalhes"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                        <items jcr:primaryType="nt:unstructured">
+                            <about
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                fieldLabel="Sobre o Café"
+                                name="./about"
+                                rows="6"/>
+
+                            <heroImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                fieldLabel="Imagem grande"
+                                name="./heroImage"
+                                allowUpload="{Boolean}false"
+                                uploadUrl="${fileReference}"
+                                fileNameParameter="./heroName"/>
+                        </items>
+                    </details>
+
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Playfair+Display:wght@600&display=swap");
+
+.coffee-card {
+  background: #deddD5;              
+  padding: 28px 24px;
+  width: 280px;
+  max-width: 350px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Heebo", sans-serif;
+}
+
+.coffee-card-placeholder {
+  background: #fff8f4;                 
+  border: 2px dashed #c9b2a9;         
+  color: #8c645a;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Heebo", sans-serif;
+  text-align: center;
+  padding: 1rem;
+}
+
+.coffee-card-placeholder p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* cabeçalho (país + ref) */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.country,
+.ref {
+  font-family: "Heebo", sans-serif;
+}
+
+/* bolha oval + título */
+.lot-wrapper {
+  text-align: center;
+}
+.lot {
+  display: inline-block;
+  padding: 8px 26px;
+  border: 2px solid #203532;         /* verde bem escuro */
+  border-radius: 999px;
+  font-family: "Heebo", sans-serif;
+  font-size: 24px;
+  line-height: 1;
+  color: #203532;
+}
+.title {
+  margin-top: 22px;
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  line-height: 1.1;
+  color: #203532;
+  text-transform: uppercase;
+}
+
+/* linhas de info */
+.facts {
+  border-top: 2px solid #e9e8e2;
+  border-bottom: 2px solid #e9e8e2;
+  display: flex;
+  flex-direction: column;
+}
+.facts > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: 1px solid #e9e8e2;
+}
+.facts > div:first-child { border-top: none; }
+
+dt, dd {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+dt { font-weight: 600; }
+dd { text-align: right; }
+
+/* bloco das notas */
+.notes-block {
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+.notes-block dt {
+  font-weight: 600;
+}
+.notes-block dd {
+  margin-top: 4px;
+}
+
+/* botão */
+.details {
+  margin-top: auto;
+  background: #ffffff;
+  color: #203532;
+  border: 3px solid #deddD5;
+  font-family: "Heebo", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+  padding: 14px 0;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 7px 30px -10px rgba(0,0,0,.08);
+  transition: background .2s;
+}
+.details:hover {
+  background: #203532;
+  color: #ffffff;
+}

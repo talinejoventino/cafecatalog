@@ -1,0 +1,25 @@
+.coffee-details .hero{
+  height:45vh;
+  background-size:cover;
+  background-position:center;
+}
+.coffee-details .info{
+  max-width:800px;
+  margin:2rem auto;
+  font-family:Heebo,sans-serif;
+  line-height:1.6;
+}
+.coffee-details table{
+  width:100%;
+  border-collapse:collapse;
+  margin:1rem 0;
+}
+.coffee-details th{
+  text-align:left;
+  padding:4px 8px;
+  font-weight:600;
+}
+.coffee-details td{
+  padding:4px 8px;
+  border-left:1px solid #ddd;
+}
